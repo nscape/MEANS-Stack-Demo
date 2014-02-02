@@ -9,7 +9,7 @@ Cookie based authentication using Passport
 
 ## Credits
 routingConfig.js - [fnakstad](https://github.com/fnakstad)
-Auth workflow - [mrgamer](https://github.com/mrgamer))
+Auth workflow - [mrgamer](https://github.com/mrgamer)
 
 ## License
 MIT
