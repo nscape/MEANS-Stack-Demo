@@ -5,6 +5,8 @@
     "express": "~3.4.7",
     "ejs": "~0.8.4",
     "async":"~0.2.9",
+    "step":"~0.0.5",
+    "wait.for": "0.6.3",
     "pg":"~2.10.0",
     "node-uuid" : "~1.4.1",
     "generic-pool" : "~2.0.4",
@@ -58,7 +60,8 @@
     "karma-phantomjs-launcher": "~0.1.1",
     "karma": "~0.10.8",
     "karma-ng-html2js-preprocessor": "~0.1.0",
-    "mocha": "~1.16.2"
+    "mocha": "~1.16.2",
+    "chai":"*"
   },
   "engines": {
     "node": ">=0.8.0"

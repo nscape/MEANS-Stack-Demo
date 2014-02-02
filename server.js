@@ -12,15 +12,18 @@ require('./lib/config/express')(app);
 var mongodb = require('./lib/db/mongo');
 
 // Sequelize
-var sequelize = require('./lib/db/sequelize').sequelize
-.sync({ force: true })
-.complete(function(err) {
-	if (err) {
-	  throw err
-	} else {
-	  console.log('Sequelize sync complete');
-	}
-})
+var sequelize = require('./lib/db/sequelize');
+
+sequelize
+  .sync()
+  .complete(function(err) {
+    if (err) {
+      throw err
+    } else {
+      console.log('Sequelize sync complete');
+    }
+  })
+    
 
 // Passport configuration
 require('./lib/config/passport');
