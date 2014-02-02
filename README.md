@@ -10,7 +10,7 @@ MongoDB is fun and all, but sometimes uttering the term NOSQL is dangerous. This
 
 ## Credits
 * routingConfig.js - [fnakstad](https://github.com/fnakstad)
-* Auth workflow - [mrgamer](https://github.com/mrgamer)
+* Auth logic - [mrgamer](https://github.com/mrgamer)
 
 ## License
 MIT
