@@ -17,7 +17,7 @@ angular.module('c-register', ['c-base'])
 	$scope.submit = function (formInstance) {
 		// xhr is departing
 		$scope.xhr = true;
-		$http.post('/register', $scope.registerObj)
+		$http.post('/auth/register', $scope.registerObj)
 		.success(function (data, status, headers, config) {
 			console.info('post success - ', data);
 			$scope.xhr = false;

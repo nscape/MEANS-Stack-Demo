@@ -17,7 +17,9 @@ angular.module('c-base', ['ui.router'])
            *
            * Calling resolvePendingState makes the loginService retrieve his userRole remotely.
            */
+          console.log(loginService.pendingStateChange)
           if (loginService.pendingStateChange) {
+            console.log(loginService.pendingStateChange)
             return loginService.resolvePendingState($http.get('/user'));
           } else {
             roleDefined.resolve();

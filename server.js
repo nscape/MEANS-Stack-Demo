@@ -15,6 +15,7 @@ var mongodb = require('./lib/db/mongo');
 var sequelize = require('./lib/db/sequelize');
 
 sequelize
+	.sequelize
   .sync()
   .complete(function(err) {
     if (err) {

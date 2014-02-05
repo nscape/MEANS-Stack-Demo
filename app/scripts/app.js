@@ -6,7 +6,8 @@ angular.module('mainApp', [
   'loginService', 
   // load app components
   'c-home',
-  'c-register'
+  'c-register',
+  'c-error'
 
 
 ])
@@ -23,6 +24,7 @@ angular.module('mainApp', [
   $rootScope.doingResolve = false;
 
   $rootScope.$on('$stateChangeStart', function () {
+    console.log('statechangestart')
     $rootScope.doingResolve = true;
   });
   $rootScope.$on('$stateChangeSuccess', resolveDone);
@@ -42,7 +44,7 @@ angular.module('mainApp', [
   };
   $scope.loginMe = function () {
     // setup promise, and 'working' flag
-    var loginPromise = $http.post('/login', $scope.login);
+    var loginPromise = $http.post('/auth/login', $scope.login);
     $scope.login.working = true;
     $scope.login.wrong = false;
 
@@ -56,6 +58,6 @@ angular.module('mainApp', [
     });
   };
   $scope.logoutMe = function () {
-    loginService.logoutUser($http.get('/logout'));
+    loginService.logoutUser($http.get('/auth/logout'));
   };
 });
