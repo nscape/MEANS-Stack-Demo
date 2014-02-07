@@ -1,3 +1,10 @@
+@import "variables";
+
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+$FontAwesomePath: "../bower_components/components-font-awesome/fonts/";
+@import "../bower_components/sass-bootstrap/lib/bootstrap";
+@import "../bower_components/components-font-awesome/scss/font-awesome";
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -7,7 +14,7 @@
 
 /* Space out content a bit */
 body {
-    padding-top: 20px;
+    padding-top: 0px;
     padding-bottom: 20px;
 }
 
@@ -15,8 +22,8 @@ body {
 .header,
 .marketing,
 .footer {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 /* Custom page header */
