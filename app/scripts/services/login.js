@@ -11,32 +11,6 @@ angular.module('loginService', [])
     /**
      * Low-level, private functions.
      */
-    var setHeaders = function (token) {
-      if (!token) {
-        delete $http.defaults.headers.common['X-Token'];
-        return;
-      }
-      $http.defaults.headers.common['X-Token'] = token.toString();
-    };
-
-    var setToken = function (token) {
-      if (!token) {
-        localStorage.removeItem('userToken');
-      } else {
-        localStorage.setItem('userToken', token);
-      }
-      setHeaders(token);
-    };
-
-    var getLoginData = function () {
-      if (userToken) {
-        setHeaders(userToken);
-      } else {
-        wrappedService.userRole = userRoles.public;
-        wrappedService.isLogged = false;
-        wrappedService.doneLoading = true;
-      }
-    };
 
     var initLoginData = function (){
         wrappedService.userRole = userRoles.public;
@@ -143,8 +117,6 @@ angular.module('loginService', [])
          *   $state.go('app.nagscreen');
          * }
          */
-        // setup token
-        setToken(user.token);
         // update user
         angular.extend(wrappedService.user, user);
         // flag true on isLogged
@@ -161,7 +133,7 @@ angular.module('loginService', [])
          * De-registers the userToken remotely
          * then clears the loginService as it was on startup
          */
-        setToken(null);
+
         this.userRole = userRoles.public;
         this.user = {};
         this.isLogged = false;
