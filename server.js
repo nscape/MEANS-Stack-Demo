@@ -16,7 +16,7 @@ var sequelize = require('./lib/db/sequelize');
 
 sequelize
 	.sequelize
-  .sync()
+  .sync({force:true})
   .complete(function(err) {
     if (err) {
       throw err
