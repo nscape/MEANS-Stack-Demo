@@ -1,5 +1,5 @@
 ## Overview
-This is an old abandoned project prototype that uses a split DB setup with Mongoose and Sequelize since in this particular case SQL features were crucial. This repo was meant to be used to showcase basic MEAN + SQL features as well as Angular front end security features.
+This is an old abandoned project prototype that uses a split DB setup with Mongoose and Sequelize since in this particular case SQL features were crucial. This repo was meant to be used to showcase basic MEAN + SQL features as well as a permission based security setup for Angular.
 
 ## Demo Features
 * ExpressJS basics
