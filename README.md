@@ -1,16 +1,20 @@
-## Why?
-MongoDB is fun and all, but sometimes uttering the term NOSQL is dangerous. This is a demo used to show off the MEAN stack essentials in a room where pitching a document store would be difficult.
+## Overivew
+This is an old abandoned project prototype that uses a split DB setup with Mongoose and Sequelize since in this particular case SQL features were crucial. This repo was meant to be used to showcase basic MEAN + SQL features as well as Angular front end security features.
 
 ## Demo Features
 * ExpressJS basics
 * Models with Mongoose and Sequelize
 * AngularJS with angular-ui-router
 * Cookie based authentication using Passport 
-* Workflow with Yo
+* Yeoman
 
-## Credits
-* routingConfig.js - [fnakstad](https://github.com/fnakstad)
-* Auth logic - [mrgamer](https://github.com/mrgamer)
+## Setup
+
+Create a lib/config/database.json file and configure db/mongo.js and db/sequelize.js
+
+Then run
+
+		grunt serve
 
 ## License
 MIT
