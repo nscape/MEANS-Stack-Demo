@@ -5,6 +5,7 @@ This is an old abandoned project prototype that uses a split DB setup with Mongo
 * ExpressJS basics
 * Models with Mongoose and Sequelize
 * AngularJS with angular-ui-router
+* Angluar login service
 * Cookie based authentication using Passport 
 * Yeoman
 
