@@ -92,7 +92,7 @@ describe('controller unit tests', function(){
     describe('#create()', function(){
       beforeEach(function(){
         req.body = {
-          name: 'League of Legends'
+          name: 'Game A'
         }
       });
 
@@ -108,7 +108,7 @@ describe('controller unit tests', function(){
     describe('#findByName()', function(){
       beforeEach(function(){
         req.body = {
-          name: 'League of Legends'
+          name: 'Game A'
         }
       });
 
@@ -129,20 +129,20 @@ describe('controller unit tests', function(){
       it('should return a 200, with the first participants data', function(done) {
         res.json = res.send = function(httpStatus, data) {
           expect(httpStatus).to.equal(200);
-          expect(data.name).to.equal('Counter Logic Gaming');
+          expect(data.name).to.equal('Team A');
           done();
         };
-        req = {body: {name: 'Counter Logic Gaming', tag: 'CLG'}}
+        req = {body: {name: 'Team A', tag: 'TA'}}
         ParticipantCtrl.create(req, res, next);
       });
 
       it('should return a 200, with the second participants data', function(done) {
         res.json = res.send = function(httpStatus, data) {
           expect(httpStatus).to.equal(200);
-          expect(data.name).to.equal('Team Solo Mid');
+          expect(data.name).to.equal('Team B');
           done();
         };
-        req = {body: {name: 'Team Solo Mid', tag: 'TSM'}}
+        req = {body: {name: 'Team B', tag: 'TB'}}
         ParticipantCtrl.create(req, res, next);
       });
     })
@@ -152,7 +152,7 @@ describe('controller unit tests', function(){
     describe('#create()', function(){
       var tCategory;
       it('should return a 200, with the category', function(done) {
-        req.body = {name: 'League of Legends'}
+        req.body = {name: 'Game A'}
         res.json = res.send = function(httpStatus, data) {
           tCategory = data;
           expect(httpStatus).to.equal(200);
@@ -163,14 +163,14 @@ describe('controller unit tests', function(){
 
       it('should return a 200, with event data', function(done) {
         req.body = {
-          title: 'Counter Logic Gaming VS TSM', 
+          title: 'Team A VS Team B', 
           beginsAt: new Date(),
           UserId: 2,
           CategoryId: tCategory.id
         }
         res.json = res.send = function(httpStatus, data) {
           expect(httpStatus).to.equal(200);
-          expect(data.title).to.equal('Counter Logic Gaming VS TSM');
+          expect(data.title).to.equal('Team A VS Team B');
           expect(data.CategoryId).to.equal(tCategory.id);
           done();
         };
@@ -204,8 +204,8 @@ describe('controller unit tests', function(){
         }
         res.json = res.send = function(httpStatus, data) {
           expect(httpStatus).to.equal(200);
-          expect(data.event.title).to.equal('Counter Logic Gaming VS TSM');
-          expect(data.participant.name).to.equal('Counter Logic Gaming');
+          expect(data.event.title).to.equal('Team A VS Team B');
+          expect(data.participant.name).to.equal('Team A');
           done();
         };
         EventParticipantCtrl.findById(req, res, next);
@@ -233,8 +233,8 @@ describe('controller unit tests', function(){
         }
         res.json = res.send = function(httpStatus, data) {
           expect(httpStatus).to.equal(200);
-          expect(data.event.title).to.equal('Counter Logic Gaming VS TSM');
-          expect(data.participant.name).to.equal('Team Solo Mid');
+          expect(data.event.title).to.equal('Team A VS Team B');
+          expect(data.participant.name).to.equal('Team B');
           done();
         };
         EventParticipantCtrl.findById(req, res, next);
